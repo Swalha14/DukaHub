@@ -1,6 +1,7 @@
 <?php
 class layout
 {
+    
     public function header($conf)
     {
         ?>
@@ -16,6 +17,7 @@ class layout
         <body>
         <?php
     }
+
 
     public function nav($conf)
     {

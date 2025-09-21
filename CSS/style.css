@@ -1,0 +1,149 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Header Banner (Brand + Nav in one color) */
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1565C0; /* same as footer */
+  color: #fff;
+  padding: 1rem 2rem;
+}
+
+/* Brand Name */
+.banner h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+}
+
+/* Navbar */
+.banner nav ul {
+  display: flex;
+  list-style: none;
+}
+.banner nav ul li {
+  margin-left: 25px;
+}
+.banner nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+.banner nav ul li a:hover {
+  color: #F9A825; /* golden accent */
+}
+
+/* Hero Section (Welcome area) */
+.hero {
+  background: linear-gradient(135deg, #B3E5FC, #81D4FA); /* pastel blue */
+  color: #0D47A1;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Content */
+.content {
+  padding: 2rem;
+  text-align: center;
+}
+.content h2 {
+  margin-bottom: 1rem;
+  color: #2C3E50;
+}
+
+/* Forms */
+form,
+.dukahub-form {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+form h2,
+.dukahub-form h2 {
+  margin-bottom: 1rem;
+  color: #1E88E5;
+  text-align: center;
+}
+form label,
+.dukahub-form label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: bold;
+  color: #2C3E50;
+}
+form input,
+.dukahub-form input {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border 0.3s ease;
+}
+form input:focus,
+.dukahub-form input:focus {
+  border-color: #1E88E5;
+  outline: none;
+}
+form button,
+.dukahub-form button {
+  background: #1E88E5;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+form button:hover,
+.dukahub-form button:hover {
+  background: #1565C0;
+  transform: scale(1.02);
+}
+.dukahub-form p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.dukahub-form a {
+  color: #1E88E5;
+  text-decoration: none;
+}
+.dukahub-form a:hover {
+  text-decoration: underline;
+  color: #F9A825;
+}
+
+/* Footer */
+footer {
+  margin-top: 2rem;
+  background: #1565C0; /* same as header */
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
