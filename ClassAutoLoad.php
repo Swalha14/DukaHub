@@ -10,7 +10,7 @@ $directories = ['Forms', 'Layout', 'Global'];
 // Autoload classes
 spl_autoload_register(function ($className) use ($directories) {
     foreach ($directories as $directory) {
-        $filePath = _DIR_ . '/' . $directory . '/' . $className . '.php';
+        $filePath = __DIR__ . '/' . $directory . '/' . $className . '.php';
         if (file_exists($filePath)) {
             require_once $filePath;
             return;
