@@ -41,9 +41,9 @@ class layout
         <section class="hero">
             <h2>Welcome to <?php echo $conf['site_name']; ?></h2>
             <p>
-                <?php echo $conf['site_name']; ?> is your digital shop hub. 
-                Easily connect buyers and sellers, explore community shops, 
-                and manage your store with simplicity and speed.
+                <?php echo $conf['site_name']; ?> is a digital shop platform. 
+                Easily connect with the store, explore what we have to offer, 
+                and buy what you need.Happy shopping!
             </p>
         </section>
         <?php
@@ -58,13 +58,53 @@ class layout
                 $Objform->signup();
             } elseif (basename($_SERVER['PHP_SELF']) == 'signin.php') {
                 $Objform->signin();
-            } else {
-                echo "<h2>Explore " . $conf['site_name'] . "</h2><p>Sign up or log in to get started.</p>";
-            }
+            } /*else {
+                echo "<h2>Explore " . $conf['site_name'] ;  //"</h2><p>Sign up or log in to get started.</p>";
+            }*/
             ?>
         </section>
         <?php
     }
+
+    public function categories_section($conn)
+{
+    try {
+        // Fetch categories using PDO
+        $query = "SELECT * FROM categories";
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+        $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        ?>
+        
+        <section class="categories">
+            <h2>Shop by Category</h2>
+            <div class="category-grid">
+                <?php
+                if ($categories && count($categories) > 0) {
+                    foreach ($categories as $row) {
+                        ?>
+                        <div class="category-card">
+                            <img src="Images/Categories/<?php echo htmlspecialchars($row['image']); ?>" 
+                                 alt="<?php echo htmlspecialchars($row['name']); ?>">
+                            <h3><?php echo htmlspecialchars($row['name']); ?></h3>
+                            <p><?php echo htmlspecialchars($row['description']); ?></p>
+                        </div>
+                        <?php
+                    }
+                } else {
+                    echo "<p>No categories found.</p>";
+                }
+                ?>
+            </div>
+        </section>
+
+        <?php
+    } catch (PDOException $e) {
+        echo "<p>Error loading categories: " . $e->getMessage() . "</p>";
+    }
+}
+
+
 
     public function footer($conf)
     {

@@ -1,6 +1,6 @@
 <?php
 // Load Composer dependencies if needed (PHPMailer, etc.)
-// require 'Plugins/PHPMailer/vendor/autoload.php';
+ require 'Plugins/PHPMailer/vendor/autoload.php';
 
 require_once 'conf.php';
 
@@ -17,6 +17,10 @@ spl_autoload_register(function ($className) use ($directories) {
         }
     }
 });
+
+/*Create a database connection
+$SQL = new dbConnection($conf['db_type'], $conf['db_host'], $conf['db_name'], $conf['db_user'], $conf['db_pass'], $conf['db_port']);
+*/
 
 // Create instances
 $Objform   = new Forms();
