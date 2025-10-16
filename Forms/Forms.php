@@ -5,7 +5,7 @@ class Forms
     public function signup()
     {
         ?>
-        <h2>Sign Up</h2>
+        
         <form action="signup_process.php" method="post" class="dukahub-form">
             
             <label for="username">Username:</label>
@@ -43,7 +43,7 @@ class Forms
     public function signin()
     {
         ?>
-        <h2>Sign In</h2>
+        
         <form action="signin_process.php" method="post" class="dukahub-form">
             
             <label for="signin_email">Email:</label>

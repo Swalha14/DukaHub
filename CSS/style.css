@@ -74,7 +74,9 @@
 form,
 .dukahub-form {
   max-width: 400px;
-  margin: 2rem auto;
+  /*margin: 2rem auto;*/
+  margin: 5rem auto;
+  padding: 3rem 2rem;
   padding: 1.5rem;
   background: #fff;
   border: 1px solid #e0e0e0;
@@ -147,12 +149,18 @@ footer {
   text-align: center;
   padding: 1rem;
 }
+footer a {
+  color: #fff;              
+  
+}
+
+footer a:hover {
+  color: #FFEB3B;           
+}
 
 
 /* --- Categories Section --- */
-/* =====================
-   CATEGORIES SECTION
-===================== */
+
 .categories {
   padding: 40px;
   background-color: #f9f9f9;

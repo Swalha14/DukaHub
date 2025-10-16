@@ -110,7 +110,15 @@ class layout
     {
         ?>
         <footer>
-            <p>&copy; <?php echo date("Y"); ?> <?php echo $conf['site_name']; ?> - All Rights Reserved</p>
+           <h5>Contact Us</h5>
+        <p>Have questions or need help? Email us at 
+            <a href="mailto:admin@dukahub.com">admin@dukahub.com</a>
+        </p>
+
+        <hr style="width: 60%; margin: 1rem auto; border: 0; border-top: 1px solid #fff;">
+
+
+            <p>&copy; <?php echo date("Y"); ?> <?php echo $conf['site_name']; ?>. All rights reserved.</p>
         </footer>
         </body>
         </html>
