@@ -1,6 +1,6 @@
 
 <?php
-require_once 'ClassAutoLoad.php'; // autoloader should load $conf and SendMail
+require_once 'ClassAutoLoad.php'; 
 
 $mailContent = [
     'name_from'  => 'Dukahub',

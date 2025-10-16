@@ -11,7 +11,7 @@ if (isset($_POST['signup'])) {
     }
 
     try {
-        // Check if email already exists
+        
         $stmt = $conn->prepare("SELECT id FROM users WHERE email = :email");
         $stmt->execute([':email' => $email]);
 
@@ -19,13 +19,13 @@ if (isset($_POST['signup'])) {
             die("This email is already registered. Please use another one.");
         }
 
-        // Hash password
+        
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
         // Generate a 6-digit 2FA verification code
         $verification_code = random_int(100000, 999999);
 
-        // Insert user (with verification code and status)
+        // Inserting user into database
         $stmt = $conn->prepare("INSERT INTO users (username, email, password, verification_code, is_verified) 
                                 VALUES (:username, :email, :password, :verification_code, 0)");
         $stmt->execute([
@@ -35,7 +35,7 @@ if (isset($_POST['signup'])) {
             ':verification_code' => $verification_code
         ]);
 
-        // Send email with the 2FA code
+
         $mailContent = [
             'name_from'  => $conf['site_name'],
             'email_from' => $conf['smtp_user'],  
@@ -55,7 +55,7 @@ if (isset($_POST['signup'])) {
 
         $ObjSendMail->Send_Mail($conf, $mailContent);
 
-        // Redirect to verification page with email in URL
+        // Redirecting to verification page 
         header("Location: verify_2fa.php?email=" . urlencode($email));
         exit();
 

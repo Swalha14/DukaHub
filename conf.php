@@ -11,9 +11,10 @@ $conf = [
     // SMTP settings
     'smtp_host' => 'smtp.gmail.com',
     'smtp_user' => 'user email',
-    'smtp_pass' => 'o', // Gmail app password
+    'smtp_pass' => '', // Gmail app password
     'smtp_port' => 465
 ];
+
 // Database Configuration
 $conf['db_type'] = 'pdo';
 $conf['db_host'] = 'localhost';

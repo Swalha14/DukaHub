@@ -28,10 +28,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt = $conn->prepare("UPDATE users SET is_verified = 1, verification_code = NULL WHERE email = :email");
             $stmt->execute([':email' => $email]);
 
-            $message = '✅ Your account has been successfully verified! You can now log in.';
+            $message = ' Your account has been successfully verified! You can now log in.';
             $messageClass = 'alert-success';
         } else {
-            $message = '❌ Incorrect code. Please try again.';
+            $message = ' Incorrect code. Please try again.';
             $messageClass = 'alert-danger';
         }
     }
@@ -75,7 +75,7 @@ $Objlayout->nav($conf);
             box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
             font-size: 17px;
         ">
-            ✅ Your account has been successfully verified! 
+             Your account has been successfully verified! 
             You can now 
             <a href='signin.php' style='color: #fff; text-decoration: underline; font-weight: 700;'>
                 log in
