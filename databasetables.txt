@@ -62,3 +62,4 @@ INSERT INTO products (category_id, name, description, price, image) VALUES
 (6, 'Chocolate Bar', 'Rich milk chocolate bar.', 1.50, 'chocolate.jpg'),
 (6, 'Cookies', 'Crunchy chocolate chip cookies.', 2.00, 'cookies.jpg'),
 (6, 'Popcorn', 'Butter-flavored popcorn.', 1.00, 'popcorn.jpg');
+
