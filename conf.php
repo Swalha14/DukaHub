@@ -11,7 +11,7 @@ $conf = [
     // SMTP settings
     'smtp_host' => 'smtp.gmail.com',
     'smtp_user' => 'user email',
-    'smtp_pass' => '', // Gmail app password
+    'smtp_pass' => 'dsvb amcn cwwg lber', // Gmail app password
     'smtp_port' => 465
 ];
 
@@ -20,7 +20,7 @@ $conf['db_type'] = 'pdo';
 $conf['db_host'] = 'localhost';
 //$conf['db_port'] = 3307; port={$conf['db_port']};
 $conf['db_user'] = 'root';
-$conf['db_pass'] = 'your_password';
+$conf['db_pass'] = 'saju';
 $conf['db_name'] = 'dukahub';
 
 // Database Connection

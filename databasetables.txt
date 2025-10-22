@@ -1,0 +1,64 @@
+CREATE TABLE categories (
+    id INT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description TEXT,
+    image VARCHAR(100)
+);
+
+
+INSERT INTO categories (id, name, description, image) VALUES
+(1, 'Fruits', 'Fresh and juicy fruits straight from the farm.', 'fruits.jpg'),
+(2, 'Vegetables', 'Healthy and organic vegetables for daily meals.', 'vegetables.jpg'),
+(3, 'Dairy Products', 'Milk, cheese, butter, and other dairy items.', 'dairy.jpg'),
+(4, 'Beverages', 'Juices, soft drinks, and bottled water.', 'beverages.jpg'),
+(5, 'Bakery', 'Freshly baked bread, cakes, and pastries.', 'bakery.jpg'),
+(6, 'Snacks', 'Crisps, biscuits, and other quick bites.', 'snacks.jpg'),
+(7, 'Cereals & Grains', 'Rice, maize flour, oats, and wheat products.', 'cereals.jpg'),
+(8, 'Meat & Poultry', 'Fresh meat, chicken, and fish products.', 'meat.jpg'),
+(9, 'Household Items', 'Detergents, tissues, and other daily essentials.', 'household.jpg');
+
+
+
+CREATE TABLE products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    category_id INT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    description TEXT,
+    price DECIMAL(10,2),
+    image VARCHAR(100),
+    FOREIGN KEY (category_id) REFERENCES categories(id)
+);
+
+-- Fruits (category_id = 1)
+INSERT INTO products (category_id, name, description, price, image) VALUES
+(1, 'Apple', 'Fresh red apples from local farms.', 1.50, 'apple.jpg'),
+(1, 'Banana', 'Sweet ripe bananas.', 0.80, 'banana.jpg'),
+(1, 'Mango', 'Juicy tropical mangoes.', 1.20, 'mango.jpg'),
+(1, 'Orange', 'Freshly picked oranges.', 1.00, 'orange.jpg'),
+(1, 'Strawberry', 'Sweet red strawberries.', 2.50, 'strawberry.jpg'),
+(1, 'Grapes', 'Seedless green grapes.', 2.20, 'grapes.jpg'),
+(1, 'Watermelon', 'Large fresh watermelon.', 3.50, 'watermelon.jpg'),
+(1, 'Pineapple', 'Sweet and tangy pineapple.', 2.00, 'pineapple.jpg');
+
+-- Vegetables (category_id = 2)
+INSERT INTO products (category_id, name, description, price, image) VALUES
+(2, 'Carrot', 'Crunchy organic carrots.', 0.90, 'carrot.jpg'),
+(2, 'Tomato', 'Fresh juicy tomatoes.', 1.10, 'tomato.jpg'),
+(2, 'Spinach', 'Green leafy spinach.', 1.30, 'spinach.jpg'),
+(2, 'Broccoli', 'Fresh broccoli florets.', 1.80, 'broccoli.jpg'),
+(2, 'Onion', 'Farm-fresh onions.', 0.70, 'onion.jpg'),
+(2, 'Potato', 'Locally grown potatoes.', 0.60, 'potato.jpg');
+
+-- Dairy Products (category_id = 3)
+INSERT INTO products (category_id, name, description, price, image) VALUES
+(3, 'Milk', '1L full cream milk.', 1.10, 'milk.jpg'),
+(3, 'Cheese', 'Cheddar cheese block.', 3.50, 'cheese.jpg'),
+(3, 'Butter', 'Creamy salted butter.', 2.30, 'butter.jpg'),
+(3, 'Yogurt', 'Natural probiotic yogurt.', 1.90, 'yogurt.jpg');
+
+-- Snacks (category_id = 6)
+INSERT INTO products (category_id, name, description, price, image) VALUES
+(6, 'Potato Chips', 'Crispy salted potato chips.', 1.20, 'chips.jpg'),
+(6, 'Chocolate Bar', 'Rich milk chocolate bar.', 1.50, 'chocolate.jpg'),
+(6, 'Cookies', 'Crunchy chocolate chip cookies.', 2.00, 'cookies.jpg'),
+(6, 'Popcorn', 'Butter-flavored popcorn.', 1.00, 'popcorn.jpg');

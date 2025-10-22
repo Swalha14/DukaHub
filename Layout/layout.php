@@ -69,41 +69,28 @@ class layout
     public function categories_section($conn)
 {
     try {
-        // Fetch categories using PDO
-        $query = "SELECT * FROM categories";
-        $stmt = $conn->prepare($query);
+        $stmt = $conn->prepare("SELECT * FROM categories");
         $stmt->execute();
         $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
         ?>
-        
         <section class="categories">
             <h2>Shop by Category</h2>
             <div class="category-grid">
-                <?php
-                if ($categories && count($categories) > 0) {
-                    foreach ($categories as $row) {
-                        ?>
-                        <div class="category-card">
-                            <img src="Images/Categories/<?php echo htmlspecialchars($row['image']); ?>" 
-                                 alt="<?php echo htmlspecialchars($row['name']); ?>">
-                            <h3><?php echo htmlspecialchars($row['name']); ?></h3>
-                            <p><?php echo htmlspecialchars($row['description']); ?></p>
-                        </div>
-                        <?php
-                    }
-                } else {
-                    echo "<p>No categories found.</p>";
-                }
-                ?>
+                <?php foreach ($categories as $row): ?>
+                    <a href="products.php?category_id=<?php echo htmlspecialchars($row['id']); ?>" class="category-card">
+                        <img src="Images/Categories/<?php echo htmlspecialchars($row['image']); ?>" 
+                             alt="<?php echo htmlspecialchars($row['name']); ?>">
+                        <h3><?php echo htmlspecialchars($row['name']); ?></h3>
+                        <p><?php echo htmlspecialchars($row['description']); ?></p>
+                    </a>
+                <?php endforeach; ?>
             </div>
         </section>
-
         <?php
     } catch (PDOException $e) {
         echo "<p>Error loading categories: " . $e->getMessage() . "</p>";
     }
 }
-
 
 
     public function footer($conf)
