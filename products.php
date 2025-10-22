@@ -37,8 +37,9 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                          alt="<?php echo htmlspecialchars($p['name']); ?>">
                     <h3><?php echo htmlspecialchars($p['name']); ?></h3>
                     <p><?php echo htmlspecialchars($p['description']); ?></p>
-                    <p><strong>$<?php echo number_format($p['price'], 2); ?></strong></p>
+                    <p><strong>KSh <?php echo number_format($p['price'], 0); ?></strong></p>
 
+                    
                     <form method="post" action="cart.php">
                         <input type="hidden" name="product_id" value="<?php echo $p['id']; ?>">
                         <input type="number" name="quantity" value="1" min="1" max="10" required>

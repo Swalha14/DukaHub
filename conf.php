@@ -20,7 +20,7 @@ $conf['db_type'] = 'pdo';
 $conf['db_host'] = 'localhost';
 //$conf['db_port'] = 3307; port={$conf['db_port']};
 $conf['db_user'] = 'root';
-$conf['db_pass'] = '';
+$conf['db_pass'] = 'saju';
 $conf['db_name'] = 'dukahub';
 
 // Database Connection

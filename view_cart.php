@@ -20,13 +20,13 @@ $layout->nav(['site_name' => 'DukaHub']);
                 <tr>
                     <td><img src="Images/Products/<?php echo htmlspecialchars($item['image']); ?>" width="60"></td>
                     <td><?php echo htmlspecialchars($item['name']); ?></td>
-                    <td>$<?php echo number_format($item['price'], 2); ?></td>
+                    <td>KSh<?php echo number_format($item['price'], 2); ?></td>
                     <td><?php echo $item['quantity']; ?></td>
-                    <td>$<?php echo number_format($subtotal, 2); ?></td>
+                    <td>KSh<?php echo number_format($subtotal, 2); ?></td>
                 </tr>
             <?php endforeach; ?>
         </table>
-        <h3>Total: $<?php echo number_format($total, 2); ?></h3>
+        <h3>Total: KSh<?php echo number_format($total, 2); ?></h3>
     <?php else: ?>
         <p>Your cart is empty.</p>
     <?php endif; ?>
