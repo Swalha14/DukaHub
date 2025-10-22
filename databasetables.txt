@@ -56,6 +56,28 @@ INSERT INTO products (category_id, name, description, price, image) VALUES
 (3, 'Butter', 'Creamy salted butter.', 2.30, 'butter.jpg'),
 (3, 'Yogurt', 'Natural probiotic yogurt.', 1.90, 'yogurt.jpg');
 
+-- Beverages (category_id = 4)
+INSERT INTO products (category_id, name, description, price, image) VALUES
+(4, 'Coca-Cola 500ml', 'Refreshing soft drink, best served chilled.', 1.20, 'cocacola.jpg'),
+(4, 'Sprite 500ml', 'Crisp lemon-lime flavored soft drink.', 1.10, 'sprite.jpg'),
+(4, 'Fanta Orange 500ml', 'Sweet and tangy orange-flavored soda.', 1.15, 'fanta_orange.jpg'),
+(4, 'Minute Maid Mango Juice 1L', 'Rich mango juice made from real fruit pulp.', 2.50, 'minute_maid_mango.jpg'),
+(4, 'Dasani Water 1L', 'Clean and purified bottled drinking water.', 0.90, 'dasani_water.jpg'),
+(4, 'Red Bull 250ml', 'Energy drink to boost focus and performance.', 2.00, 'redbull.jpg'),
+(4, 'Nescafe Classic 100g', 'Premium instant coffee for your daily energy.', 4.50, 'nescafe_classic.jpg'),
+(4, 'Brookside Fresh Milk 500ml', 'Pure pasteurized milk for daily consumption.', 1.30, 'brookside_milk.jpg');
+
+-- Bakery (category_id = 5)
+INSERT INTO products (category_id, name, description, price, image) VALUES
+(5, 'White Bread Loaf', 'Soft and freshly baked white bread.', 1.80, 'white_bread.jpg'),
+(5, 'Whole Wheat Bread', 'Healthy bread made from whole grains.', 2.00, 'whole_wheat_bread.jpg'),
+(5, 'Chocolate Cake Slice', 'Moist and rich chocolate cake slice.', 2.50, 'chocolate_cake.jpg'),
+(5, 'Vanilla Cupcake', 'Sweet and fluffy vanilla cupcake topped with icing.', 1.20, 'vanilla_cupcake.jpg'),
+(5, 'Croissant', 'Flaky, buttery pastry perfect for breakfast.', 1.70, 'croissant.jpg'),
+(5, 'Cinnamon Roll', 'Soft roll swirled with cinnamon and sugar.', 2.10, 'cinnamon_roll.jpg'),
+(5, 'Banana Muffin', 'Homemade-style banana muffin baked fresh daily.', 1.50, 'banana_muffin.jpg'),
+(5, 'Garlic Bread', 'Toasted bread flavored with garlic and butter.', 1.90, 'garlic_bread.jpg');
+
 -- Snacks (category_id = 6)
 INSERT INTO products (category_id, name, description, price, image) VALUES
 (6, 'Potato Chips', 'Crispy salted potato chips.', 1.20, 'chips.jpg'),
@@ -63,3 +85,35 @@ INSERT INTO products (category_id, name, description, price, image) VALUES
 (6, 'Cookies', 'Crunchy chocolate chip cookies.', 2.00, 'cookies.jpg'),
 (6, 'Popcorn', 'Butter-flavored popcorn.', 1.00, 'popcorn.jpg');
 
+-- Cereals and Grains (category_id = 7)
+INSERT INTO products (category_id, name, description, price, image) VALUES
+(7, 'Long Grain Rice 5kg', 'Premium quality long grain white rice.', 6.50, 'long_grain_rice.jpg'),
+(7, 'Basmati Rice 2kg', 'Aromatic basmati rice ideal for biryani.', 8.00, 'basmati_rice.jpg'),
+(7, 'Maize Flour 2kg', 'Refined maize flour for ugali and porridge.', 2.50, 'maize_flour.jpg'),
+(7, 'Whole Oats 1kg', 'Healthy oats for porridge and baking.', 3.80, 'whole_oats.jpg'),
+(7, 'Wheat Flour 2kg', 'All-purpose wheat flour for baking and cooking.', 3.00, 'wheat_flour.jpg'),
+(7, 'Brown Rice 2kg', 'Nutritious unpolished brown rice.', 4.50, 'brown_rice.jpg'),
+(7, 'Cornflakes 500g', 'Crispy and tasty breakfast cereal.', 3.20, 'cornflakes.jpg'),
+(7, 'Millet Flour 1kg', 'Natural and gluten-free millet flour.', 2.80, 'millet_flour.jpg');
+
+-- Meat & Poultry (category_id = 8)
+INSERT INTO products (category_id, name, description, price, image) VALUES
+(8, 'Beef Steak 1kg', 'Fresh, tender beef steak ideal for grilling or frying.', 9.50, 'beef_steak.jpg'),
+(8, 'Chicken Drumsticks 1kg', 'Juicy chicken drumsticks, ready to cook.', 6.20, 'chicken_drumsticks.jpg'),
+(8, 'Whole Chicken 1.5kg', 'Farm-raised whole chicken, fresh and tasty.', 10.00, 'whole_chicken.jpg'),
+(8, 'Minced Beef 1kg', 'Finely ground fresh beef for stews or burgers.', 8.80, 'minced_beef.jpg'),
+(8, 'Tilapia Fish 1kg', 'Fresh tilapia fish, cleaned and ready to cook.', 7.50, 'tilapia_fish.jpg'),
+(8, 'Sausages (Pack of 10)', 'Delicious pork sausages perfect for breakfast.', 5.00, 'sausages.jpg'),
+(8, 'Chicken Wings 1kg', 'Crispy and juicy wings for frying or roasting.', 6.00, 'chicken_wings.jpg'),
+(8, 'Goat Meat 1kg', 'Lean goat meat, ideal for stews and barbecues.', 9.00, 'goat_meat.jpg');
+
+-- Household Items (category_id = 9)
+INSERT INTO products (category_id, name, description, price, image) VALUES
+(9, 'Ariel Washing Powder 1kg', 'Powerful detergent for bright, clean clothes.', 4.20, 'ariel_powder.jpg'),
+(9, 'Harpic Toilet Cleaner 500ml', 'Removes stains and kills germs instantly.', 2.80, 'harpic_cleaner.jpg'),
+(9, 'Vim Dishwashing Paste 500g', 'Tough on grease, gentle on hands.', 1.90, 'vim_paste.jpg'),
+(9, 'Tissue Roll (Pack of 10)', 'Soft and strong tissue rolls for everyday use.', 3.50, 'tissue_pack.jpg'),
+(9, 'Sunlight Bar Soap 200g', 'Multi-purpose soap for laundry and cleaning.', 1.20, 'sunlight_bar.jpg'),
+(9, 'Mop & Bucket Set', 'Durable cleaning mop with a spin bucket system.', 12.00, 'mop_bucket.jpg'),
+(9, 'Air Freshener 300ml', 'Long-lasting fragrance for a fresh home.', 2.50, 'air_freshener.jpg'),
+(9, 'Jik Bleach 1L', 'Powerful disinfectant and stain remover.', 3.80, 'jik_bleach.jpg');
