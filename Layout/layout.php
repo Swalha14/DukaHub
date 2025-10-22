@@ -18,22 +18,42 @@ class layout
         <?php
     }
 
+public function nav($conf)
+{
+    // Start session (only if not already started)
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
 
-    public function nav($conf)
-    {
-        ?>
-        <div class="banner">
-            <h1><?php echo $conf['site_name']; ?></h1>
-            <nav>
-                <ul>
-                    <li><a href="./">Home</a></li>
+    // Detect if user is logged in
+    $loggedIn = isset($_SESSION['user_id']) || isset($_SESSION['admin_id']);
+    $isAdmin = isset($_SESSION['admin_id']);
+    ?>
+    <div class="banner">
+        <h1><?php echo $conf['site_name']; ?></h1>
+        <nav>
+            <ul>
+                <li><a href="./">Home</a></li>
+
+                <?php if ($loggedIn): ?>
+                    <?php if ($isAdmin): ?>
+                        <li><a href="admin_dashboard.php">Admin Dashboard</a></li>
+                    <?php else: ?>
+                        <li><a href="shop.php">Shop</a></li>
+                        <li><a href="profile.php">Profile</a></li>
+                    <?php endif; ?>
+
+                    <li><a href="signout.php">Sign Out</a></li>
+
+                <?php else: ?>
                     <li><a href="signup.php">Sign Up</a></li>
                     <li><a href="signin.php">Sign In</a></li>
-                </ul>
-            </nav>
-        </div>
-        <?php
-    }
+                <?php endif; ?>
+            </ul>
+        </nav>
+    </div>
+    <?php
+}
 
     public function banner($conf)
     {

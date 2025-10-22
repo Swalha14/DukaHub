@@ -297,3 +297,100 @@ footer a:hover {
 .add-to-cart:hover {
     background: #e65c00;
 }
+.error {
+    color: red;
+    text-align: center;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* --- Admin Dashboard Styles --- */
+
+.admin-dashboard {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 3rem 2rem;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 70vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Header Section */
+.admin-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.admin-header h1 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.admin-header p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Admin Menu Navigation */
+.admin-menu {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.admin-menu ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.admin-menu ul li {
+    background-color: #007bff;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.admin-menu ul li:hover {
+    background-color: #0056b3;
+}
+
+.admin-menu a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+/* Dashboard Content */
+.admin-content {
+    text-align: center;
+}
+
+.admin-content h2 {
+    font-size: 1.4rem;
+    color: #222;
+    margin-bottom: 0.5rem;
+}
+
+.admin-content p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Responsive Layout */
+@media (max-width: 600px) {
+    .admin-menu ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
