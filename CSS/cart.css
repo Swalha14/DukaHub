@@ -1,0 +1,84 @@
+/* cart.css */
+
+/* Container */
+.container.mt-4 {
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+/* Table Styling */
+.table.table-striped.table-bordered {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.table th, .table td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* Input quantity styling */
+input[type=number] {
+    width: 60px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Buttons */
+.btn-danger {
+    background-color: #fff;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+.btn-success {
+    background-color: #fff;
+    border-color: #198754;
+}
+
+.btn-success:hover {
+    background-color: #fff;
+    border-color: #146c43;
+}
+
+/* Alert styling */
+.alert-success {
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+/* Empty cart message */
+p {
+    font-size: 1.2rem;
+    color: #6c757d;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .table th, .table td {
+        font-size: 0.9rem;
+    }
+
+    input[type=number] {
+        width: 50px;
+    }
+}

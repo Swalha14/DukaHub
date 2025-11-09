@@ -39,7 +39,7 @@ public function nav($conf)
                     <?php if ($isAdmin): ?>
                         <li><a href="admin_dashboard.php">Admin Dashboard</a></li>
                     <?php else: ?>
-                        <li><a href="shop.php">Shop</a></li>
+                        <li><a href="cart.php">View Cart</a></li>
                         <li><a href="profile.php">Profile</a></li>
                     <?php endif; ?>
 
