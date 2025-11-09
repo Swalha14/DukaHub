@@ -39,12 +39,12 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <p><?php echo htmlspecialchars($p['description']); ?></p>
                     <p><strong>KSh <?php echo number_format($p['price'], 0); ?></strong></p>
 
-                    
-                    <form method="post" action="cart.php">
+                    <form method="post" action="cart.php" class="add-to-cart-form">
                         <input type="hidden" name="product_id" value="<?php echo $p['id']; ?>">
                         <input type="number" name="quantity" value="1" min="1" max="10" required>
                         <button type="submit" name="add_to_cart">Add to Cart</button>
                     </form>
+
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
@@ -52,5 +52,21 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php endif; ?>
     </div>
 </section>
+
+
+<script>
+    //Action listener for add to cart 
+document.addEventListener('DOMContentLoaded', function() {
+    <?php if (!isset($_SESSION['user'])): ?>
+        const forms = document.querySelectorAll('.add-to-cart-form');
+        forms.forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault(); // Stop the form from submitting
+                alert("Please log in to add products to cart.");
+            });
+        });
+    <?php endif; ?>
+});
+</script>
 
 <?php $layout->footer($conf); ?>
