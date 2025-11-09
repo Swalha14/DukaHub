@@ -102,3 +102,70 @@ INSERT INTO products (category_id, name, description, price, image) VALUES
 (9, 'Vim Dishwashing Paste 500g', 'Tough on grease, gentle on hands.', 1.90, 'vim_paste.jpg'),
 (9, 'Tissue Roll (Pack of 10)', 'Soft and strong tissue rolls for everyday use.', 3.50, 'tissue_pack.jpg'),
 (9, 'Sunlight Bar Soap 200g', 'Multi-purpose soap for laundry and cleaning.', 1.20, 'sunlight_bar.jpg');
+
+
+//Updating prices to ksh
+-- 🥭 FRUITS (category_id = 1)
+UPDATE products SET price = 195 WHERE name = 'Apple';
+UPDATE products SET price = 103 WHERE name = 'Banana';
+UPDATE products SET price = 155 WHERE name = 'Mango';
+UPDATE products SET price = 129 WHERE name = 'Orange';
+UPDATE products SET price = 323 WHERE name = 'Strawberry';
+UPDATE products SET price = 284 WHERE name = 'Grapes';
+UPDATE products SET price = 452 WHERE name = 'Watermelon';
+UPDATE products SET price = 259 WHERE name = 'Pineapple';
+
+-- 🥕 VEGETABLES (category_id = 2)
+UPDATE products SET price = 116 WHERE name = 'Carrot';
+UPDATE products SET price = 143 WHERE name = 'Tomato';
+UPDATE products SET price = 168 WHERE name = 'Spinach';
+UPDATE products SET price = 233 WHERE name = 'Broccoli';
+UPDATE products SET price = 90 WHERE name = 'Onion';
+UPDATE products SET price = 77 WHERE name = 'Potato';
+
+-- 🧈 DAIRY PRODUCTS (category_id = 3)
+UPDATE products SET price = 142 WHERE name = 'Milk';
+UPDATE products SET price = 452 WHERE name = 'Cheese';
+UPDATE products SET price = 297 WHERE name = 'Butter';
+UPDATE products SET price = 245 WHERE name = 'Yogurt';
+
+-- 🥤 BEVERAGES (category_id = 4)
+UPDATE products SET price = 155 WHERE name = 'Coca-Cola 500ml';
+UPDATE products SET price = 143 WHERE name = 'Sprite 500ml';
+UPDATE products SET price = 149 WHERE name = 'Fanta Orange 500ml';
+UPDATE products SET price = 323 WHERE name = 'Minute Maid Mango Juice 1L';
+UPDATE products SET price = 116 WHERE name = 'Dasani Water 1L';
+
+-- 🍞 BAKERY (category_id = 5)
+UPDATE products SET price = 233 WHERE name = 'White Bread Loaf';
+UPDATE products SET price = 259 WHERE name = 'Whole Wheat Bread';
+UPDATE products SET price = 323 WHERE name = 'Chocolate Cake Slice';
+UPDATE products SET price = 155 WHERE name = 'Vanilla Cupcake';
+UPDATE products SET price = 220 WHERE name = 'Croissant';
+
+-- 🍪 SNACKS (category_id = 6)
+UPDATE products SET price = 155 WHERE name = 'Potato Chips';
+UPDATE products SET price = 195 WHERE name = 'Chocolate Bar';
+UPDATE products SET price = 259 WHERE name = 'Cookies';
+UPDATE products SET price = 129 WHERE name = 'Popcorn';
+
+-- 🌾 CEREALS AND GRAINS (category_id = 7)
+UPDATE products SET price = 840 WHERE name = 'Long Grain Rice 5kg';
+UPDATE products SET price = 1034 WHERE name = 'Basmati Rice 2kg';
+UPDATE products SET price = 323 WHERE name = 'Maize Flour 2kg';
+UPDATE products SET price = 491 WHERE name = 'Whole Oats 1kg';
+UPDATE products SET price = 388 WHERE name = 'Wheat Flour 2kg';
+
+-- 🍗 MEAT & POULTRY (category_id = 8)
+UPDATE products SET price = 1228 WHERE name = 'Beef Steak 1kg';
+UPDATE products SET price = 801 WHERE name = 'Chicken Drumsticks 1kg';
+UPDATE products SET price = 1292 WHERE name = 'Whole Chicken 1.5kg';
+UPDATE products SET price = 1137 WHERE name = 'Minced Beef 1kg';
+UPDATE products SET price = 969 WHERE name = 'Tilapia Fish 1kg';
+
+-- 🧽 HOUSEHOLD ITEMS (category_id = 9)
+UPDATE products SET price = 543 WHERE name = 'Ariel Washing Powder 1kg';
+UPDATE products SET price = 361 WHERE name = 'Harpic Toilet Cleaner 500ml';
+UPDATE products SET price = 245 WHERE name = 'Vim Dishwashing Paste 500g';
+UPDATE products SET price = 452 WHERE name = 'Tissue Roll (Pack of 10)';
+UPDATE products SET price = 155 WHERE name = 'Sunlight Bar Soap 200g';
