@@ -3,6 +3,7 @@
  require 'Plugins/PHPMailer/vendor/autoload.php';
 
 require_once 'conf.php';
+require_once 'Includes/dbconnection.php';
 
 
 $directories = ['Forms', 'Layout', 'Global'];
@@ -18,9 +19,8 @@ spl_autoload_register(function ($className) use ($directories) {
     }
 });
 
-/*Create a database connection
+//Create a database connection
 $SQL = new dbConnection($conf['db_type'], $conf['db_host'], $conf['db_name'], $conf['db_user'], $conf['db_pass'], $conf['db_port']);
-*/
 
 // Create instances
 $Objform   = new Forms();
