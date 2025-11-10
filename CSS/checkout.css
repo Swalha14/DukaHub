@@ -1,0 +1,121 @@
+/* checkout.css */
+
+/* Container */
+.checkout-container {
+    max-width: 700px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Heading */
+.checkout-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 1.8rem;
+}
+
+/* Shipping Info Section */
+.shipping-info {
+    margin-bottom: 30px;
+}
+
+.shipping-info label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.shipping-info input,
+.shipping-info textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+/* Order Summary */
+.order-summary {
+    margin-top: 25px;
+    border-top: 2px solid #eee;
+    padding-top: 20px;
+}
+
+.order-summary h3 {
+    font-size: 1.4rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.order-summary table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order-summary th, 
+.order-summary td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.order-summary th {
+    background: #fafafa;
+    font-weight: bold;
+}
+
+/* Total section */
+.total {
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Place Order button */
+.place-order-btn {
+    display: block;
+    width: 100%;
+    background-color: #198754;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.place-order-btn:hover {
+    background-color: #157347;
+}
+
+/* Alert */
+.alert-success {
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .checkout-container {
+        padding: 20px;
+        margin: 30px 15px;
+    }
+
+    .place-order-btn {
+        font-size: 1rem;
+    }
+}
