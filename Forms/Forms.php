@@ -39,28 +39,34 @@ class Forms
         </button>
         <?php
     }
-
-    public function signin()
-    {
-        ?>
+public function signin()
+{
+    ?>
+    <form action="signin_process.php" method="post" class="dukahub-form">
         
-        <form action="signin_process.php" method="post" class="dukahub-form">
-            
-            <label for="signin_email">Email:</label>
-            <input type="email" id="signin_email" name="email" required>
-            
-            <label for="signin_password">Password:</label>
-            <input type="password" id="signin_password" name="password" required>
-            
-            <?php
-            $this->submit_btn("Sign In", "signin");
-            ?>
-            <p>
-                <a href="signup.php">Don’t have an account? Sign up</a>
-            </p>
-        </form>
+        <label for="signin_email">Email:</label>
+        <input type="email" id="signin_email" name="email" required>
+        
+        <label for="signin_password">Password:</label>
+        <input type="password" id="signin_password" name="password" required>
+        
         <?php
-    }
+        $this->submit_btn("Sign In", "signin");
+        ?>
+
+        <p class="mt-2">
+            <a href="forgot_password.php" style="color:#007bff; text-decoration: none; font-weight: 600;">
+                Forgot your password?
+            </a>
+        </p>
+
+        <p>
+            <a href="signup.php">Don’t have an account? Sign up</a>
+        </p>
+    </form>
+    <?php
+}
+
 }
 
 ?>
