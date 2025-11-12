@@ -11,7 +11,7 @@ if (!isset($_SESSION['admin_id'])) {
     exit();
 }
 
-// Get PDO connection from dbConnection class
+// Get PDO connection
 $conn = $SQL->getConnection();
 
 $Objlayout->header($conf);
@@ -21,12 +21,29 @@ $Objlayout->nav($conf);
 if (isset($_GET['delete_id'])) {
     $deleteId = (int)$_GET['delete_id'];
     try {
+        $conn->beginTransaction();
+
+        // Delete all orders belonging to the user first
+        $stmt = $conn->prepare("DELETE FROM orders WHERE user_id = :id");
+        $stmt->bindParam(':id', $deleteId, PDO::PARAM_INT);
+        $stmt->execute();
+
+        // Now delete the user
         $stmt = $conn->prepare("DELETE FROM users WHERE id = :id");
         $stmt->bindParam(':id', $deleteId, PDO::PARAM_INT);
         $stmt->execute();
-        echo '<div class="alert alert-success">User deleted successfully.</div>';
+
+        $conn->commit();
+
+        echo '<div class="alert alert-success text-center mt-3">
+                ✅ User and related orders deleted successfully. Refreshing...
+              </div>';
+        echo '<meta http-equiv="refresh" content="2;url=view_users.php">';
     } catch (PDOException $e) {
-        echo '<div class="alert alert-danger">Error deleting user: ' . htmlspecialchars($e->getMessage()) . '</div>';
+        $conn->rollBack();
+        echo '<div class="alert alert-danger text-center mt-3">
+                ❌ Error deleting user: ' . htmlspecialchars($e->getMessage()) . '
+              </div>';
     }
 }
 ?>
@@ -36,7 +53,7 @@ if (isset($_GET['delete_id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registered Users - <?php echo htmlspecialchars($conf['site_name']); ?></title>
+    <title>View Users - <?php echo htmlspecialchars($conf['site_name']); ?></title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -50,14 +67,23 @@ if (isset($_GET['delete_id'])) {
 
     <?php
     try {
-        // Prepare and execute query safely
+        // Fetch users
         $stmt = $conn->prepare("SELECT id, username, email, created_at FROM users ORDER BY created_at DESC");
         $stmt->execute();
         $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         if ($users) {
-            echo '<table id="usersTable" class="table table-striped table-bordered">';
-            echo '<thead><tr><th>ID</th><th>Full Name</th><th>Email</th><th>Created At</th><th>Action</th></tr></thead><tbody>';
+            echo '<table id="usersTable" class="table table-striped table-bordered align-middle">';
+            echo '<thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Created At</th>
+                        <th>Action</th>
+                    </tr>
+                  </thead><tbody>';
+
             foreach ($users as $user) {
                 echo '<tr>';
                 echo '<td>' . htmlspecialchars($user['id']) . '</td>';
@@ -66,19 +92,22 @@ if (isset($_GET['delete_id'])) {
                 echo '<td>' . htmlspecialchars($user['created_at']) . '</td>';
                 echo '<td>
                         <a href="?delete_id=' . $user['id'] . '" 
-                           class="btn btn-danger btn-sm" 
-                           onclick="return confirm(\'Are you sure you want to delete this user?\');">
+                           class="btn btn-danger btn-sm"
+                           onclick="return confirm(\'Are you sure you want to delete this user and all their orders?\');">
                            Delete
                         </a>
                       </td>';
                 echo '</tr>';
             }
+
             echo '</tbody></table>';
         } else {
-            echo '<p>No registered users found.</p>';
+            echo '<p class="text-muted">No registered users found.</p>';
         }
     } catch (PDOException $e) {
-        echo '<div class="alert alert-danger">Database Error: ' . htmlspecialchars($e->getMessage()) . '</div>';
+        echo '<div class="alert alert-danger mt-3">
+                Database Error: ' . htmlspecialchars($e->getMessage()) . '
+              </div>';
     }
     ?>
 </div>

@@ -36,6 +36,7 @@ $Objlayout->nav($conf);
             <li><a href="view_users.php">👥 View Users</a></li>
             <li><a href="view_products.php">🛒 View Products</a></li>
             <li><a href="view_categories.php">📦 View Categories</a></li>
+            <li><a href="admin_orders.php">📄 View Orders</a></li>
             
         </ul>
     </nav>

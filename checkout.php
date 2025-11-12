@@ -4,6 +4,7 @@ require_once "ClassAutoLoad.php";
 require_once "conf.php";
 require_once __DIR__ . "/Layout/layout.php";
 
+// Ensure user is logged in
 if (!isset($_SESSION['user_id'])) {
     header("Location: signin.php");
     exit;
@@ -51,8 +52,13 @@ if (isset($_POST['pay_order'])) {
     $address = $_POST['address'];
     $payment_method = $_POST['payment_method'] ?? 'Online';
 
-    // Simulate payment success
-    $payment_success = rand(0, 1) === 1; // 50% chance success
+    // Alternating payment success/failure for demo
+    if (!isset($_SESSION['last_payment_success'])) {
+        $_SESSION['last_payment_success'] = false; // start with failure
+    }
+    $payment_success = !$_SESSION['last_payment_success'];
+    $_SESSION['last_payment_success'] = $payment_success;
+
     if (!$payment_success) {
         $order_success = "Payment failed. Please try again.";
     } else {
@@ -63,20 +69,23 @@ if (isset($_POST['pay_order'])) {
             $conn->beginTransaction();
 
             // Insert order
-            $order_stmt = $conn->prepare("INSERT INTO orders 
-                (user_id, fullname, email, phone, address, total, payment_method, payment_status, transaction_id)
-                VALUES (:user_id, :fullname, :email, :phone, :address, :total, :payment_method, :payment_status, :transaction_id)");
-            $order_stmt->execute([
-                ':user_id' => $user_id,
-                ':fullname' => $fullname,
-                ':email' => $email,
-                ':phone' => $phone,
-                ':address' => $address,
-                ':total' => $total,
-                ':payment_method' => $payment_method,
-                ':payment_status' => $payment_status,
-                ':transaction_id' => $transaction_id
-            ]);
+           $order_stmt = $conn->prepare("INSERT INTO orders 
+    (user_id, fullname, email, phone, address, total, payment_method, payment_status, transaction_id, order_status)
+    VALUES (:user_id, :fullname, :email, :phone, :address, :total, :payment_method, :payment_status, :transaction_id, :order_status)");
+
+$order_stmt->execute([
+    ':user_id' => $user_id,
+    ':fullname' => $fullname,
+    ':email' => $email,
+    ':phone' => $phone,
+    ':address' => $address,
+    ':total' => $total,
+    ':payment_method' => $payment_method,
+    ':payment_status' => $payment_status,
+    ':transaction_id' => $transaction_id,
+    ':order_status' => 'Pending'  
+]);
+
 
             $order_id = $conn->lastInsertId();
 

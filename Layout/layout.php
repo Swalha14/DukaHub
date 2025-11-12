@@ -120,6 +120,8 @@ public function nav($conf)
            <h5>Contact Us</h5>
         <p>Have questions or need help? Email us at 
             <a href="mailto:admin@dukahub.com">admin@dukahub.com</a>
+            or call us at 
+    <a href="tel:+254701234567">+254 701 234 567</a>
         </p>
 
         <hr style="width: 60%; margin: 1rem auto; border: 0; border-top: 1px solid #fff;">
